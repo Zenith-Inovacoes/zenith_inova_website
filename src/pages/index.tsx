@@ -8,6 +8,7 @@ import { useState } from 'react'
 import Burger from '@/components/Burger'
 import Menu from '@/components/Menu'
 import Navbar from '@/components/Navbar'
+import Contact from '@/components/Home/Contact'
 import ZenithLetterLogo from '@/assets/zenith-letter-logo.svg'
 import { UilChannel } from '@iconscout/react-unicons'
 
@@ -22,6 +23,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       {/* <Navbar open={open}>
+        <Image src={ZenithLetterLogo} alt="Logo só de letra da Zenith" width={128} />
+        <Burger open={open} setOpen={setOpen} />
+      </Navbar>
+      <Menu open={open} /> */}
         <Image src={ZenithLetterLogo} alt="Logo só de letra da Zenith" width={128}/>
         <Burger open={open} setOpen={setOpen} />
       </Navbar>
@@ -44,6 +49,7 @@ export default function Home() {
           </ProductCard.Description>
         </ProductCard.Text>
       </ProductCard.Root>
+      <Contact />
     </>
   )
 }
