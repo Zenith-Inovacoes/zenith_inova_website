@@ -1,26 +1,27 @@
 import styled from "styled-components";
 
-type props = {
+type propsNavbar = {
   open: boolean;
+  scrollPosition: number;
 };
 
-export const NavbarWrapper = styled.div<props>`
+export const NavbarWrapper = styled.div<propsNavbar>`
   position: fixed;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2.125rem 2rem;
+  padding: ${({scrollPosition}) => scrollPosition > 200 ? ".8rem" : "2.125rem"} 2rem;
   min-height: 40px;
   height: auto;
   width: 100%;
-  background-color: transparent;
+  background-color: ${({theme, scrollPosition}) => scrollPosition > 200 ? theme.colors.primaryColor : "transparent"};
   border-bottom: ${({ open }) =>
     open ? `1px solid rgba(255,255,255, .2)` : "transparent"};
-  transition: border-bottom ease 1s;
+  transition: border-bottom ease 1s, padding ease 1s, background-color ease 1s;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
-    padding: 2.125rem 8rem;
+    padding: ${({scrollPosition}) => scrollPosition > 200 ? ".8rem" : "2.125rem"} 8rem;
   }
 
   @media (min-width: ${({theme}) => theme.breakpoints.md}) {

@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Burger from '@/components/Burger'
 import Menu from '@/components/Menu'
 import Navbar from '@/components/Navbar'
+import Contact from '@/components/Home/Contact'
 
 import ZenithLetterLogo from '@/assets/zenith-letter-logo.svg'
 
@@ -18,11 +19,12 @@ export default function Home() {
         <title>Zenith Inova</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Navbar open={open}>
-        <Image src={ZenithLetterLogo} alt="Logo só de letra da Zenith" width={128}/>
+      {/* <Navbar open={open}>
+        <Image src={ZenithLetterLogo} alt="Logo só de letra da Zenith" width={128} />
         <Burger open={open} setOpen={setOpen} />
       </Navbar>
-      <Menu open={open} />
+      <Menu open={open} /> */}
+      <Contact />
     </>
   )
 }
