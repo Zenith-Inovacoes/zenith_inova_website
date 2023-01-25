@@ -7,8 +7,8 @@ export const Wrapper = styled.div`
   align-items: center;
   text-align: center;
   position: relative;
-  width: 300px;
-  height: 250px;
+  max-width: 300px;
+  min-height: 250px;
   background: linear-gradient(180deg, rgba(115, 39, 187, 0) 0%, rgba(115, 39, 187, 0.25) 100%);
   border: double 1px transparent;
   border-radius: 10px;
@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
   background-clip: content-box, border-box;
   border-image-source: linear-gradient(180deg, rgba(115, 39, 187, 0) 0%, #7327BB 99.48%);
   border-image-slice: 1;
-  word-wrap: break-word;
+  word-break: break-word;
   transform: translateY(40px);
 `
 
@@ -40,5 +40,7 @@ export const TextWrapper = styled.div`
   align-items: center;
   text-align: center;
   gap: 12px;
+  margin: 0 1.625rem;
   margin-top: 50px;
+  margin-bottom: 2.375rem;
 `
