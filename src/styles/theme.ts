@@ -1,11 +1,11 @@
 const theme: any = {
     colors: {
-        darkBlue: '#1F3DAD',
-        purple: '#3D07B7',
-        blue: '#009ADB',
-        white: '#D9D9D9',
-        darkerBlue: '#161957',
-        black: '#010101'
+        white: '#FFFFFF',
+        black: '#000',
+        primaryColor: "#00001F",
+        purpleZenith: "#7327BB",
+        darkPrimaryColor: "#030424",
+        textHover: "#a727fa"
     },
     sizes: {
         xsmall: '1rem',
@@ -14,6 +14,12 @@ const theme: any = {
         large: '2.4rem',
         xlarge: '3.2rem',
         xxlarge: '4rem'
+    },
+    breakpoints: {
+        sm: "576px",
+        md: "768px",
+        lg: "992px",
+        xl: "1200px"
     }
 }
 
