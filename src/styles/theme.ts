@@ -3,16 +3,17 @@ const theme: any = {
         darkBlue: '#1F3DAD',
         purple: '#3D07B7',
         blue: '#009ADB',
-        white: '#D9D9D9',
+        white: '#fff',
         darkerBlue: '#161957',
         black: '#010101'
     },
     sizes: {
-        xsmall: '1rem',
+        xsmall: '0.875rem',
         small: '1.2rem',
-        normal: '1.6rem',
-        large: '2.4rem',
-        xlarge: '3.2rem',
+        normal: '1.5rem',
+        medium: '1.875rem',
+        large: '2.25rem',
+        xlarge: '3.125rem',
         xxlarge: '4rem'
     }
 }

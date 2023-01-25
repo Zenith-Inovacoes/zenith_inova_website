@@ -28,6 +28,9 @@ export default createGlobalStyle`
     }
     body {
         line-height: 1;
+        background-color: #00001F;
+        width: 100%;
+        height: 100vh;
     }
     ol, ul {
         list-style: none;
@@ -43,5 +46,9 @@ export default createGlobalStyle`
     table {
         border-collapse: collapse;
         border-spacing: 0;
+    }
+    #__next {
+        width: 100%;
+        height: 100vh;
     }
 `
