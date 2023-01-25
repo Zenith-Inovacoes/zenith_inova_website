@@ -27,11 +27,7 @@ export default function Home() {
         <Burger open={open} setOpen={setOpen} />
       </Navbar>
       <Menu open={open} /> */}
-        <Image src={ZenithLetterLogo} alt="Logo só de letra da Zenith" width={128}/>
-        <Burger open={open} setOpen={setOpen} />
-      </Navbar>
-      <Menu open={open} /> */}
-      {/* <MainSection /> */}
+      {/* <MainSection /> */ }
       <ProductCard.Root>
         <ProductCard.Icon>
           <UilChannel size={32} color="white"/>
