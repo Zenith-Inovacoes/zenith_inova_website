@@ -1,6 +1,6 @@
 const theme: any = {
     colors: {
-        white: '#FFFFFF',
+        white: '#FFF',
         black: '#000',
         primaryColor: "#00001F",
         purpleZenith: "#7327BB",

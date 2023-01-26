@@ -1,13 +1,12 @@
 import styled from "styled-components"
 
-
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   position: relative;
-  max-width: 300px;
+  width: 300px;
   min-height: 250px;
   background: linear-gradient(180deg, rgba(115, 39, 187, 0) 0%, rgba(115, 39, 187, 0.25) 100%);
   border: double 1px transparent;
@@ -18,6 +17,10 @@ export const Wrapper = styled.div`
   border-image-slice: 1;
   word-break: break-word;
   transform: translateY(40px);
+
+  @media (min-width: ${({theme}) => theme.breakpoints.xl}) {
+    width: 372px;
+  }
 `
 
 export const IconWrapper = styled.div`
@@ -32,6 +35,11 @@ export const IconWrapper = styled.div`
   height: 80px;
   background: linear-gradient(141.88deg, #260E42 21.36%, #010102 80.2%);
   border-radius: 50px;
+
+  @media (min-width: ${({theme}) => theme.breakpoints.xl}) {
+    left: 0;
+    transform: translate(0%, -50%);
+  }
 `
 
 export const TextWrapper = styled.div`
@@ -43,4 +51,9 @@ export const TextWrapper = styled.div`
   margin: 0 1.625rem;
   margin-top: 50px;
   margin-bottom: 2.375rem;
+
+  @media (min-width: ${({theme}) => theme.breakpoints.xl}) {
+    align-items: flex-start;
+    text-align: left;
+  }
 `

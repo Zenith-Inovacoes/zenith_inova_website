@@ -8,6 +8,7 @@ import { useState } from 'react'
 import Burger from '@/components/Burger'
 import Menu from '@/components/Menu'
 import Navbar from '@/components/Navbar'
+import Products from '@/components/Home/Products'
 import Contact from '@/components/Home/Contact'
 import ZenithLetterLogo from '@/assets/zenith-letter-logo.svg'
 import { UilChannel } from '@iconscout/react-unicons'
@@ -27,25 +28,9 @@ export default function Home() {
         <Burger open={open} setOpen={setOpen} />
       </Navbar>
       <Menu open={open} /> */}
-      {/* <MainSection /> */ }
-      <ProductCard.Root>
-        <ProductCard.Icon>
-          <UilChannel size={32} color="white"/>
-        </ProductCard.Icon>
-        <ProductCard.Text>
-          <ProductCard.Title>
-            <Typography level={4} fontWeight={700} color="white" size="normal">
-              IBM Blockchain:
-            </Typography>
-          </ProductCard.Title>
-          <ProductCard.Description>
-            <Typography level={4} fontWeight={300} color="white" size="xsmall">
-              IBM is the pioneer company to use blockchain for creating efficient and tranparent business operation. The blockchain platagorm of IBM is a popular plataform to use.
-              </Typography>
-          </ProductCard.Description>
-        </ProductCard.Text>
-      </ProductCard.Root>
-      <Contact />
+      {/* <MainSection /> */}
+      <Products />
+      {/* <Contact /> */}
     </>
   )
 }
