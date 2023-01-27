@@ -3,7 +3,6 @@ import { UilPlane } from '@iconscout/react-unicons'
 import { UilSitemap } from '@iconscout/react-unicons'
 import { UilTear } from '@iconscout/react-unicons'
 import { UilWatch } from '@iconscout/react-unicons'
-import React from 'react'
 
 export const products = [
     {

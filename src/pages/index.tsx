@@ -11,6 +11,7 @@ import Navbar from '@/components/Navbar'
 import Products from '@/components/Home/Products'
 import Contact from '@/components/Home/Contact'
 import ZenithLetterLogo from '@/assets/zenith-letter-logo.svg'
+import About from '@/components/Home/About'
 import { UilChannel } from '@iconscout/react-unicons'
 
 
@@ -29,7 +30,8 @@ export default function Home() {
       </Navbar>
       <Menu open={open} /> */}
       {/* <MainSection /> */}
-      <Products />
+      <About />
+      {/* <Products /> */}
       {/* <Contact /> */}
     </>
   )
