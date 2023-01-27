@@ -7,7 +7,7 @@ import { areas } from '@/model/areas'
 
 export default function About() {
     return (
-        <S.AboutWrapper>
+        <S.AboutWrapper id='about'>
             <Image src={Rectangle} alt="Rectangle" />
             <div>
                 <S.AbouTextsContainer>

@@ -31,7 +31,7 @@ export default function Products() {
     }
 
     return (
-        <S.ProductsWrapper>
+        <S.ProductsWrapper id='products'>
             <div>
                 <Typography level={1} size="large" fontWeight={700} lineHeight="2.25rem">
                     Produtos

@@ -4,35 +4,38 @@ import Typography from '../Typography';
 import { UilInstagram } from '@iconscout/react-unicons'
 import { UilWhatsapp } from '@iconscout/react-unicons'
 
-export default function Menu({ open }: MenuProps) {
+export default function Menu({ open, setOpen }: MenuProps) {
+    function scrollScreenTo(section: any) {
+        window?.scroll({
+            top: section?.offsetTop - 200,
+            behavior: 'smooth',
+        })
+        setOpen(!open)
+    }
+
     return (
         <S.StyledMenu open={open}>
-            <S.StyledLinkMenu href="/" open={open}>
+            <S.StyledLinkMenu open={open} onClick={() => scrollScreenTo(document.getElementById("main"))}>
                 <Typography level={1} size="xsmall">
                     Home
                 </Typography>
             </S.StyledLinkMenu>
-            <S.StyledLinkMenu href="/" open={open}>
+            <S.StyledLinkMenu open={open}>
                 <Typography level={1} size="xsmall">
                     Parceiros
                 </Typography>
             </S.StyledLinkMenu>
-            <S.StyledLinkMenu href="/" open={open}>
+            <S.StyledLinkMenu open={open} onClick={() => scrollScreenTo(document.getElementById("about"))}>
                 <Typography level={1} size="xsmall">
                     Sobre nós
                 </Typography>
             </S.StyledLinkMenu>
-            <S.StyledLinkMenu href="/" open={open}>
+            <S.StyledLinkMenu open={open} onClick={() => scrollScreenTo(document.getElementById("products"))}>
                 <Typography level={1} size="xsmall">
                     Produtos
                 </Typography>
             </S.StyledLinkMenu>
-            <S.StyledLinkMenu href="/" open={open}>
-                <Typography level={1} size="xsmall">
-                    Equipe
-                </Typography>
-            </S.StyledLinkMenu>
-            <S.StyledLinkMenu href="/" open={open}>
+            <S.StyledLinkMenu open={open} onClick={() => scrollScreenTo(document.getElementById("contacts"))}>
                 <Typography level={1} size="xsmall">
                     Contato
                 </Typography>

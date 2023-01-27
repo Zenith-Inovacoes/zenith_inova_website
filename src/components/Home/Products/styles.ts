@@ -14,6 +14,7 @@ export const ProductsWrapper = styled.section`
   text-align: center;
   height: auto;
   overflow-x: hidden;
+  margin-top: 10rem;
 
   > div:nth-child(1) {
     padding: 1.5rem 0;
@@ -37,7 +38,7 @@ export const ProductsContainer = styled.div<IndicatorsProps>`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 6rem;
   gap: 2.5rem;
   color: ${({ theme }) => theme.colors.white};
   transform: translateX(
@@ -85,6 +86,10 @@ export const CarouselIndicators = styled.div<IndicatorsProps>`
     :hover {
       background-color: ${({ theme }) => theme.colors.purpleZenith};
       transition: background-color ease 0.4s;
+    }
+
+    :focus {
+      background-color: ${({theme}) => theme.colors.textHover};
     }
   }
 

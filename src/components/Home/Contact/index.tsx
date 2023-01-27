@@ -10,7 +10,7 @@ import { UilMapMarker } from '@iconscout/react-unicons'
 
 export default function Contact() {
     return (
-        <S.ContactWrapper>
+        <S.ContactWrapper id='contacts'>
             <S.LeftLight/>
             <S.RightLight/>
             <S.ContactLinksWrapper>

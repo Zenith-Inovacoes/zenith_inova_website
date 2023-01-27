@@ -11,17 +11,18 @@ export const NavbarWrapper = styled.div<propsNavbar>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: ${({scrollPosition}) => scrollPosition > 200 ? ".8rem" : "2.125rem"} 2rem;
+  padding: ${({scrollPosition}) => scrollPosition > 64 ? ".8rem" : "2.125rem"} 2rem;
   min-height: 40px;
   height: auto;
   width: 100%;
-  background-color: ${({theme, scrollPosition}) => scrollPosition > 200 ? theme.colors.primaryColor : "transparent"};
+  z-index: 100000;
+  background-color: ${({theme, scrollPosition}) => scrollPosition > 64 ? theme.colors.primaryColor : "transparent"};
   border-bottom: ${({ open }) =>
     open ? `1px solid rgba(255,255,255, .2)` : "transparent"};
   transition: border-bottom ease 1s, padding ease 1s, background-color ease 1s;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
-    padding: ${({scrollPosition}) => scrollPosition > 200 ? ".8rem" : "2.125rem"} 8rem;
+    padding: ${({scrollPosition}) => scrollPosition > 64 ? ".8rem" : "2.125rem"} 8rem;
   }
 
   @media (min-width: ${({theme}) => theme.breakpoints.md}) {
@@ -33,16 +34,25 @@ export const NavbarItemsWrapper = styled.div`
   display: none;
   width: fit-content;
 
-  > a {
+  > button {
+    background: transparent;
+    border: none;
     cursor: pointer;
   }
 
-  > a:not(:last-child) {
+  > button:not(:last-child) {
     margin-right: 1rem;
   }
 
-  > a:hover * {
+  > button:hover * {
     transform: scale(1.1);
+    color: ${({theme}) => theme.colors.textHover};
+  }
+  > button:focus {
+    border: none;
+  }
+
+  > button:focus * {
     color: ${({theme}) => theme.colors.textHover};
   }
 
@@ -51,7 +61,7 @@ export const NavbarItemsWrapper = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
-    > a:not(:last-child) {
+    > button:not(:last-child) {
       margin-right: 3.375rem;
     }
   }
@@ -72,6 +82,14 @@ export const NavbarIconsWrapper = styled.div`
     transform: scale(1.025);
     transition: transform ease 0.2s;
     color: ${({theme}) => theme.colors.textHover};
+  }
+
+  > a:hover {
+    border: none;
+  }
+
+  > a:focus * {
+    color: ${({theme}) => theme.colors.white}
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {

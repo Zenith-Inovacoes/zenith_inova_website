@@ -12,7 +12,6 @@ import Products from '@/components/Home/Products'
 import Contact from '@/components/Home/Contact'
 import ZenithLetterLogo from '@/assets/zenith-letter-logo.svg'
 import About from '@/components/Home/About'
-import { UilChannel } from '@iconscout/react-unicons'
 
 
 export default function Home() {
@@ -24,15 +23,15 @@ export default function Home() {
         <title>Zenith Inova</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      {/* <Navbar open={open}>
+      <Navbar open={open}>
         <Image src={ZenithLetterLogo} alt="Logo só de letra da Zenith" width={128} />
         <Burger open={open} setOpen={setOpen} />
       </Navbar>
-      <Menu open={open} /> */}
-      {/* <MainSection /> */}
+      <Menu open={open} setOpen={setOpen}/>
+      <MainSection/>
       <About />
-      {/* <Products /> */}
-      {/* <Contact /> */}
+      <Products />
+      <Contact />
     </>
   )
 }
