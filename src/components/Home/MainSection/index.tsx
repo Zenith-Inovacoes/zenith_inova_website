@@ -1,6 +1,6 @@
 import * as S from "./styles"
-import Typography from "../Typography"
-import TagBox from "../TagBox/TagBox"
+import Typography from "../../Typography"
+import TagBox from "../../TagBox"
 
 export default function MainSection(){
   return(
@@ -17,6 +17,9 @@ export default function MainSection(){
             Lorem Ipsum ASnbsfbahsfsabfhbashfasshbfhas bfhas
           </Typography>
         </S.TextContainer>
+        <div style={{width: "100%", display: "flex", justifyContent: "center" }}>
+          <div style={{backgroundColor: "rgba(217, 217, 217, 0.1)", height: "300px", width: "300px"}}></div>
+        </div>
       </S.Container>
     </S.Wrapper>
   )
