@@ -50,13 +50,15 @@ export const ProductsContainer = styled.div<IndicatorsProps>`
   transition: transform ease 0.7s;
 
   > * {
-    transition: transform ease 0.3s;
+    transition: transform ease 0.3s, opacity ease .5s;
+    opacity: .5;
   }
 
   > *:nth-child(${({ activeIndicator }) => activeIndicator}) {
     @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-      transition: transform ease 0.2s;
+      transition: transform ease 0.2s, opacity ease-in .2s;
       transform: translateY(-2%);
+      opacity: 1;
     }
   }
 
