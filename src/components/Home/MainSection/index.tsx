@@ -1,6 +1,9 @@
 import * as S from "./styles"
 import Typography from "../../Typography"
 import TagBox from "../../TagBox"
+import Image from "next/image"
+
+import Rectangle from '@/assets/Rectangle23.svg'
 
 export default function MainSection(){
   return(
@@ -10,16 +13,14 @@ export default function MainSection(){
           <TagBox>
             TECHNOLOGY
           </TagBox>
-          <Typography level={4} fontWeight={700} color="white" size="normal">
+          <Typography level={1} fontWeight={700} color="white" size="xlarge" lineHeight="3.75rem">
             Lorem Ipsum ASnbsfbahsfsabfhbashfasshbfhas bfhas 
           </Typography>
-          <Typography level={4} fontWeight={100} color="white" size="normal">
+          <Typography level={4} fontWeight={100} color="white" size="large" lineHeight="2.25rem">
             Lorem Ipsum ASnbsfbahsfsabfhbashfasshbfhas bfhas
           </Typography>
         </S.TextContainer>
-        <S.ImageContainer>
-          <div style={{backgroundColor: "rgba(217, 217, 217, 0.1)", height: "300px", width: "300px"}}></div>
-        </S.ImageContainer>
+        <Image src={Rectangle} alt="Imagem teste" />
       </S.Container>
     </S.Wrapper>
   )

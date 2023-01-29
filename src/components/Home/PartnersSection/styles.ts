@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: left;
+  margin-top: 7.5rem;
 
   > h2 {
     display: block;
