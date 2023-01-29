@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   word-wrap: break-word;
-  padding-top: 48px;
 `
 
 export const TextContainer = styled.div`
@@ -36,7 +35,7 @@ export const Container = styled.div`
   //justify-content: center;
   gap: 16px;
 
-
+  margin-top: 125px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-direction: column;

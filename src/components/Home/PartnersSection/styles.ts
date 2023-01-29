@@ -66,6 +66,9 @@ export const PartnerLogo = styled.div`
   width: 161px;
   height: 68px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
 
   }
