@@ -8,10 +8,13 @@ import { useState } from 'react'
 import Burger from '@/components/Burger'
 import Menu from '@/components/Menu'
 import Navbar from '@/components/Navbar'
+import Products from '@/components/Home/Products'
 import Contact from '@/components/Home/Contact'
 import ZenithLetterLogo from '@/assets/zenith-letter-logo.svg'
 import { UilChannel } from '@iconscout/react-unicons'
 import PartnersSection from '@/components/Home/PartnersSection'
+import About from '@/components/Home/About'
+
 
 
 export default function Home() {
@@ -23,22 +26,14 @@ export default function Home() {
         <title>Zenith Inova</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      {/* <Navbar open={open}>
+      <Navbar open={open}>
         <Image src={ZenithLetterLogo} alt="Logo só de letra da Zenith" width={128} />
         <Burger open={open} setOpen={setOpen} />
       </Navbar>
-      <Menu open={open} /> */}
-      <MainSection />
-      <PartnersSection title='Parceiros'>
-        <Image src={ZenithLetterLogo} alt="Logo só de letra da Zenith" width={161} />
-        <Image src={ZenithLetterLogo} alt="Logo só de letra da Zenith" width={161} />
-        <Image src={ZenithLetterLogo} alt="Logo só de letra da Zenith" width={161} />
-        <Image src={ZenithLetterLogo} alt="Logo só de letra da Zenith" width={161} />
-        <Image src={ZenithLetterLogo} alt="Logo só de letra da Zenith" width={161} />
-        <Image src={ZenithLetterLogo} alt="Logo só de letra da Zenith" width={161} />
-        <Image src={ZenithLetterLogo} alt="Logo só de letra da Zenith" width={161} />
-        <Image src={ZenithLetterLogo} alt="Logo só de letra da Zenith" width={161} />
-      </PartnersSection>
+      <Menu open={open} setOpen={setOpen}/>
+      <MainSection/>
+      <About />
+      <Products />
       <Contact />
     </>
   )

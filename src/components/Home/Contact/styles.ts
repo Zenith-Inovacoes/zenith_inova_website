@@ -35,10 +35,12 @@ export const ContactLinksWrapper = styled.div`
       color: ${({ theme }) => theme.colors.white};
     }
 
-    :hover {
-      * {
-        color: ${({ theme }) => theme.colors.textHover};
-      }
+    :hover * {
+      color: ${({ theme }) => theme.colors.textHover};
+    }
+
+    :focus * {
+      color: ${({ theme }) => theme.colors.textHover};
     }
 
     @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
@@ -61,6 +63,7 @@ export const LeftLight = styled.div`
   height: 600px;
   width: 600px;
   left: 0;
+  z-index: -1;
   transform: translateX(-60%) translateY(40%);
   background: radial-gradient(
     50% 50% at 50% 50%,
@@ -78,6 +81,7 @@ export const RightLight = styled.div`
   height: 600px;
   width: 600px;
   right: 0;
+  z-index: -1;
   transform: translateX(60%) translateY(40%);
   background: radial-gradient(
     50% 50% at 50% 50%,

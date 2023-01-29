@@ -4,7 +4,7 @@ import TagBox from "../../TagBox"
 
 export default function MainSection(){
   return(
-    <S.Wrapper>
+    <S.Wrapper id="main">
       <S.Container>
         <S.TextContainer>
           <TagBox>

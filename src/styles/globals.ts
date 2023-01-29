@@ -30,6 +30,7 @@ export default createGlobalStyle`
         display: block;
     }
     body {
+        position: relative;
         line-height: 1;
         text-rendering: optimizeLegibility;
         overflow-x: hidden;

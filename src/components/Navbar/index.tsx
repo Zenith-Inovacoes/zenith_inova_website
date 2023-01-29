@@ -14,25 +14,32 @@ export default function Navbar({ children, open }: NavbarProps) {
         })
     }, [])
 
+    function scrollScreenTo(section: any ) {
+        window?.scroll({
+            top: section?.offsetTop - 200,
+            behavior: 'smooth',
+        })
+    }
+
     return (
         <S.NavbarWrapper open={open} scrollPosition={scrollPosition}>
             {children}
             <S.NavbarItemsWrapper>
-                <a href="#Teste">
+                <button onClick={() => scrollScreenTo(document.getElementById("main"))}>
                     <Typography size='small' fontWeight={300}>Home</Typography>
-                </a>
-                <a href="#">
+                </button>
+                <button>
+                    <Typography size='small' fontWeight={300}>Parceiros</Typography>
+                </button>
+                <button onClick={() => scrollScreenTo(document.getElementById("about"))}>
                     <Typography size='small' fontWeight={300}>Sobre nós</Typography>
-                </a>
-                <a href="#">
+                </button>
+                <button onClick={() => scrollScreenTo(document.getElementById("products"))}>
                     <Typography size='small' fontWeight={300}>Produtos</Typography>
-                </a>
-                <a href="#">
-                    <Typography size='small' fontWeight={300}>Equipe</Typography>
-                </a>
-                <a href="#">
+                </button>
+                <button onClick={() => scrollScreenTo(document.getElementById("contacts"))}>
                     <Typography size='small' fontWeight={300}>Contato</Typography>
-                </a>
+                </button>
             </S.NavbarItemsWrapper>
             <S.NavbarIconsWrapper>
                 <a href="http://instagram.com/_u/zenith.inova/" rel="noreferrer" target="_blank">
