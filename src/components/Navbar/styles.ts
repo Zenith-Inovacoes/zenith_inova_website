@@ -65,9 +65,9 @@ export const NavbarItemsWrapper = styled.div<propsNavbarItems>`
     color: ${({ theme }) => theme.colors.textHover};
   }
 
-  > button:nth-child(${(props) => props.activeLink}) * {
+  /* > button:nth-child(${(props) => props.activeLink}) * {
     color: ${({ theme }) => theme.colors.textHover};
-  }
+  } */
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     display: block;
