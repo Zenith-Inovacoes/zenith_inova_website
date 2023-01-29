@@ -2,7 +2,7 @@ import * as S from './styles'
 import Typography from '@/components/Typography'
 import Rectangle from '@/assets/Rectangle23.svg'
 import Image from 'next/image'
-import TagBox from '@/components/TagBox/TagBox'
+import TagBox from '@/components/TagBox'
 import { areas } from '@/model/areas'
 
 import WaveLeft from '@/assets/WaveLeftAbout.svg'
