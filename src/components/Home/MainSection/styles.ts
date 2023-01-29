@@ -19,7 +19,7 @@ export const TextContainer = styled.div`
   width: 50%;
   gap: 8px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -36,7 +36,25 @@ export const Container = styled.div`
   //justify-content: center;
   gap: 16px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 16px;
+  }
+`
+
+export const ImageContainer = styled.div`
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  width: 50%;
+  gap: 8px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-direction: column;
     align-items: center;
     padding: 0px 16px;

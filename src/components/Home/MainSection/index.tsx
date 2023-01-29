@@ -17,9 +17,9 @@ export default function MainSection(){
             Lorem Ipsum ASnbsfbahsfsabfhbashfasshbfhas bfhas
           </Typography>
         </S.TextContainer>
-        <div style={{width: "100%", display: "flex", justifyContent: "center" }}>
+        <S.ImageContainer>
           <div style={{backgroundColor: "rgba(217, 217, 217, 0.1)", height: "300px", width: "300px"}}></div>
-        </div>
+        </S.ImageContainer>
       </S.Container>
     </S.Wrapper>
   )
