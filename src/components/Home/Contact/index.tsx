@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Typography from '@/components/Typography'
 
 import ZenithLetterLogo from '@/assets/zenith-letter-logo.svg'
+import Wave from '@/assets/WaveContact.svg'
 
 import { UilEnvelope } from '@iconscout/react-unicons'
 import { UilPhone } from '@iconscout/react-unicons'
@@ -34,6 +35,7 @@ export default function Contact() {
                 </a>
             </S.ContactLinksWrapper>
             <Image src={ZenithLetterLogo} alt="Logo só de letra da Zenith" width={200} />
+            <Image src={Wave} alt="Onda estilizada" />
         </S.ContactWrapper>
     )
 }

@@ -5,6 +5,9 @@ import Image from 'next/image'
 import TagBox from '@/components/TagBox/TagBox'
 import { areas } from '@/model/areas'
 
+import WaveLeft from '@/assets/WaveLeftAbout.svg'
+import WaveRight from '@/assets/WaveRightAbout.svg'
+
 export default function About() {
     return (
         <S.AboutWrapper id='about'>
@@ -31,6 +34,10 @@ export default function About() {
                     ))}
                 </S.TagsContainer>
             </div>
+            <Image src={WaveLeft} alt="Onda estilizada à esquerda" />
+            <Image src={WaveRight} alt="Onda estilizada à direita" />
+            <S.SmallerLight />
+            <S.BiggerLight />
         </S.AboutWrapper>
     )
 }

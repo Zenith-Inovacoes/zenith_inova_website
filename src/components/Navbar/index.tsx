@@ -7,24 +7,36 @@ import { useEffect, useState } from 'react'
 
 export default function Navbar({ children, open }: NavbarProps) {
     const [scrollPosition, setScrollposition] = useState(0)
+    const [activeLink, setActiveLink] = useState(1)
 
     useEffect(() => {
         window.addEventListener("scroll", function () {
-            setScrollposition(this.window?.scrollY)
+            setScrollposition(window.scrollY)
+            // seeScroll(document.getElementById("main"), 1)
+            // seeScroll(document.getElementById("about"), 3)
+            // seeScroll(document.getElementById("products"), 4)
+            // seeScroll(document.getElementById("contacts"), 5)
         })
     }, [])
 
-    function scrollScreenTo(section: any ) {
+    function scrollScreenTo(section: any) {
         window?.scroll({
             top: section?.offsetTop - 200,
             behavior: 'smooth',
         })
     }
 
+    // function seeScroll(section: any, sectionNumber: number) {
+    //     console.log(section?.offsetHeight)
+    //     if(window?.scrollY >= section?.offsetTop - 200) {
+    //         setActiveLink(sectionNumber)
+    //     }
+    // }
+
     return (
         <S.NavbarWrapper open={open} scrollPosition={scrollPosition}>
             {children}
-            <S.NavbarItemsWrapper>
+            <S.NavbarItemsWrapper activeLink={activeLink}>
                 <button onClick={() => scrollScreenTo(document.getElementById("main"))}>
                     <Typography size='small' fontWeight={300}>Home</Typography>
                 </button>

@@ -12,6 +12,25 @@ export const ContactWrapper = styled.section`
   gap: 3rem;
   overflow: hidden;
 
+  > img:last-child {
+    position: absolute;
+    left: -1.5rem;
+    bottom: -2.5rem;
+    right: 0;
+    z-index: -1;
+
+    @media (min-width: ${({theme}) => theme.breakpoints.md}) {
+      left: auto;
+      right: 1.5rem;
+      bottom: 0;
+    }
+
+    @media (min-width: ${({theme}) => theme.breakpoints.xl}) {
+      right: 8rem;
+      transform: scaleX(1.2);
+    }
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
     flex-direction: row-reverse;
     justify-content: space-between;

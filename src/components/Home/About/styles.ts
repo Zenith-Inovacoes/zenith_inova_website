@@ -6,15 +6,41 @@ type CardProps = {
 
 export const AboutWrapper = styled.section`
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  > img {
+
+  > img:first-child {
     width: 300px;
     height: 300px;
     margin: 3rem;
     margin-bottom: 3rem;
+  }
+
+  > img:not(:first-child) {
+    position: absolute;
+    z-index: -1;
+  }
+
+  > img:nth-child(3) {
+    left: 0;
+    bottom: -5rem;
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
+      left: -8.5rem;
+      bottom: 0rem;
+    }
+  }
+
+  > img:nth-child(4) {
+    display: none;
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
+      display: block;
+      right: -4.5rem;
+    }
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
@@ -25,7 +51,7 @@ export const AboutWrapper = styled.section`
     margin-top: 2rem;
     text-align: left;
 
-    > img {
+    > img:first-child {
       width: 500px;
       height: 500px;
       margin: 0;
@@ -113,4 +139,31 @@ export const TagCard = styled.div`
   border: 1px solid rgba(115, 39, 187, 0.5);
   border-radius: 4px;
   color: white;
+`;
+
+export const BiggerLight = styled.div`
+  position: absolute;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(21, 1, 133, 0.25) 0%,
+    rgba(115, 39, 187, 0) 100%
+  );
+  width: 1906px;
+  height: 1916px;
+  left: -40rem;
+  z-index: -1;
+`;
+
+export const SmallerLight = styled.div`
+  position: absolute;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(21, 1, 133, 0.25) 0%,
+    rgba(115, 39, 187, 0) 100%
+  );
+  width: 552px;
+  height: 556px;
+  right: -15rem;
+  bottom: -22rem;
+  z-index: -1;
 `;

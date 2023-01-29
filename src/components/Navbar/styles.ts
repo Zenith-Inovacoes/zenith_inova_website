@@ -5,32 +5,41 @@ type propsNavbar = {
   scrollPosition: number;
 };
 
+type propsNavbarItems = {
+  activeLink: number;
+};
+
 export const NavbarWrapper = styled.div<propsNavbar>`
   position: fixed;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: ${({scrollPosition}) => scrollPosition > 64 ? ".8rem" : "2.125rem"} 2rem;
+  padding: ${({ scrollPosition }) =>
+      scrollPosition > 64 ? ".8rem" : "2.125rem"}
+    2rem;
   min-height: 40px;
   height: auto;
   width: 100%;
   z-index: 100000;
-  background-color: ${({theme, scrollPosition}) => scrollPosition > 64 ? theme.colors.primaryColor : "transparent"};
+  background-color: ${({ theme, scrollPosition }) =>
+    scrollPosition > 64 ? theme.colors.primaryColor : "transparent"};
   border-bottom: ${({ open }) =>
     open ? `1px solid rgba(255,255,255, .2)` : "transparent"};
   transition: border-bottom ease 1s, padding ease 1s, background-color ease 1s;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
-    padding: ${({scrollPosition}) => scrollPosition > 64 ? ".8rem" : "2.125rem"} 8rem;
+    padding: ${({ scrollPosition }) =>
+        scrollPosition > 64 ? ".8rem" : "2.125rem"}
+      8rem;
   }
 
-  @media (min-width: ${({theme}) => theme.breakpoints.md}) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     border-bottom: none;
   }
 `;
 
-export const NavbarItemsWrapper = styled.div`
+export const NavbarItemsWrapper = styled.div<propsNavbarItems>`
   display: none;
   width: fit-content;
 
@@ -46,14 +55,18 @@ export const NavbarItemsWrapper = styled.div`
 
   > button:hover * {
     transform: scale(1.1);
-    color: ${({theme}) => theme.colors.textHover};
+    color: ${({ theme }) => theme.colors.textHover};
   }
   > button:focus {
     border: none;
   }
 
   > button:focus * {
-    color: ${({theme}) => theme.colors.textHover};
+    color: ${({ theme }) => theme.colors.textHover};
+  }
+
+  > button:nth-child(${(props) => props.activeLink}) * {
+    color: ${({ theme }) => theme.colors.textHover};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
@@ -81,7 +94,7 @@ export const NavbarIconsWrapper = styled.div`
   > a:hover * {
     transform: scale(1.025);
     transition: transform ease 0.2s;
-    color: ${({theme}) => theme.colors.textHover};
+    color: ${({ theme }) => theme.colors.textHover};
   }
 
   > a:hover {
@@ -89,7 +102,7 @@ export const NavbarIconsWrapper = styled.div`
   }
 
   > a:focus * {
-    color: ${({theme}) => theme.colors.white}
+    color: ${({ theme }) => theme.colors.white};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
