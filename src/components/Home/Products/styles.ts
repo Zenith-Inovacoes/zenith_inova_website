@@ -14,7 +14,7 @@ export const ProductsWrapper = styled.section`
   text-align: center;
   height: auto;
   overflow-x: hidden;
-  margin-top: 10rem;
+  margin-top: 1.5rem;
 
   > div:nth-child(1) {
     padding: 1.5rem 0;
@@ -24,12 +24,16 @@ export const ProductsWrapper = styled.section`
     margin: 1rem 2rem;
 
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      margin: 1rem 15rem;
+      margin: 1rem 8rem;
     }
 
     @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-      margin: 1rem 23rem;
+      margin: 1rem 20rem;
     }
+  }
+
+  @media (min-width: ${({theme}) => theme.breakpoints.xl}) {
+    margin-top: 10rem;
   }
 `;
 
@@ -50,13 +54,15 @@ export const ProductsContainer = styled.div<IndicatorsProps>`
   transition: transform ease 0.7s;
 
   > * {
-    transition: transform ease 0.3s, opacity ease .5s;
-    opacity: .5;
+    transition: transform ease 0.3s, opacity ease 0.5s;
+    @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+      opacity: 0.5;
+    }
   }
 
   > *:nth-child(${({ activeIndicator }) => activeIndicator}) {
     @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-      transition: transform ease 0.2s, opacity ease-in .2s;
+      transition: transform ease 0.2s, opacity ease-in 0.2s;
       transform: translateY(-2%);
       opacity: 1;
     }
@@ -91,7 +97,7 @@ export const CarouselIndicators = styled.div<IndicatorsProps>`
     }
 
     :focus {
-      background-color: ${({theme}) => theme.colors.textHover};
+      background-color: ${({ theme }) => theme.colors.textHover};
     }
   }
 

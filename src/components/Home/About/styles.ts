@@ -1,16 +1,20 @@
 import styled from "styled-components";
 
-type CardProps = {
-  cardIndex: number;
-};
-
 export const AboutWrapper = styled.section`
   display: flex;
-  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: 4.25rem;
+  position: relative;
+
+  > div {
+    margin-right: 0;
+    @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
+      margin-right: 5rem;
+    }
+  }
 
   > img:first-child {
     width: 300px;
@@ -27,6 +31,12 @@ export const AboutWrapper = styled.section`
   > img:nth-child(3) {
     left: 0;
     bottom: -5rem;
+    width: 80%;
+    height: auto;
+
+    @media (min-width: ${({theme}) => theme.breakpoints.sm}) {
+      width: auto;
+    }
 
     @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
       left: -8.5rem;
@@ -43,12 +53,31 @@ export const AboutWrapper = styled.section`
     }
   }
 
+  > img:nth-child(5) {
+    left: 0;
+    width: 80%;
+    height: auto;
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
+      left: -8.5rem;
+    }
+  }
+
+  > img:nth-child(6) {
+    right: 0;
+    bottom: -60%;
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
+      right: -4.5rem;
+    }
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
     flex-direction: row-reverse;
     justify-content: space-between;
     margin-right: 4.5rem;
     margin-left: 8.5rem;
-    margin-top: 2rem;
+    margin-top: 12rem;
     text-align: left;
 
     > img:first-child {
@@ -66,9 +95,14 @@ export const AbouTextsContainer = styled.div`
   align-items: center;
   gap: 0.875rem;
 
-  > *:nth-child(2) {
+  > *:not(:nth-child(1)) {
     padding: 0 2.75rem;
     margin: 0 1rem;
+  }
+
+  > *:nth-child(1) {
+    margin-top: 3rem;
+    margin-bottom: 0.875rem;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
@@ -83,7 +117,7 @@ export const AbouTextsContainer = styled.div`
     align-items: flex-start;
     margin-right: 5rem;
 
-    > *:nth-child(2) {
+    > *:not(:nth-child(1)) {
       padding: 0;
       margin: 0;
     }
@@ -100,18 +134,16 @@ export const TagsContainer = styled.div`
   gap: 1.5rem;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
-    justify-content: flex-start;
+    justify-content: space-between;
   }
 `;
 
-export const TagCardContainer = styled.div<CardProps>`
+export const TagCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: ${({ cardIndex }) => (cardIndex % 2 == 0 ? 0 : "8rem")};
-  margin-top: ${({ cardIndex }) => (cardIndex % 2 == 0 ? "8rem" : 0)};
   transition: transform ease-out 0.3s;
 
   > *:nth-child(2) {
@@ -163,7 +195,8 @@ export const SmallerLight = styled.div`
   );
   width: 552px;
   height: 556px;
-  right: -15rem;
-  bottom: -22rem;
-  z-index: -1;
+  right: 0;
+  bottom: 0;
+  transform: translate(50%, 50%);
+  z-index: 2;
 `;

@@ -3,8 +3,15 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
   align-items: left;
-  margin-top: 7.5rem;
+  margin-top: 1rem;
+
+  > img {
+    position: absolute;
+    right: 0;
+    top: -100%;
+  }
 
   > h2 {
     display: block;
@@ -66,11 +73,17 @@ export const PartnersContainer = styled.div`
 export const PartnerLogo = styled.div`
   width: 161px;
   height: 68px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
 
+  > img {
+    object-fit: contain;
+    transition: transform ease-out .4s;
+  }
+
+  :hover img{
+    transition: transform ease .5s;
+    transform: scale(1.1);
   }
 `

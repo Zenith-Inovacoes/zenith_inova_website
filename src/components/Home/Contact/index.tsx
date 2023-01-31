@@ -15,22 +15,22 @@ export default function Contact() {
             <S.LeftLight/>
             <S.RightLight/>
             <S.ContactLinksWrapper>
-                <a href='#'>
+                <a href='mailto:contato@zenithinova.com.br' target="_blank" rel='noreferrer'>
                     <UilEnvelope size={32} />
                     <Typography level={6} size="small" fontWeight={100} lineHeight="1.5rem">
-                        johndoe@email.com
+                        contato@zenithinova.com.br
                     </Typography>
                 </a>
-                <a href='#'>
+                <a href='https://wa.me/5591989661300?text=Olá,%20gostaria%20de%20conversar%20sobre%20os%20projetos%20da%20Zenith%20Inova%20!!!'>
                     <UilPhone size={32} />
                     <Typography level={6} size="small" fontWeight={100} lineHeight="1.5rem">
-                        (91) 99999-9999
+                        (91) 98966-1300
                     </Typography>
                 </a>
-                <a href="#">
+                <a href="https://www.google.com.br/maps/place/Cesupa+-+Campus+Alcindo+Cacela+I+(Argo)/@-1.4504419,-48.4770187,19z/data=!4m6!3m5!1s0x92a48c26da0bbc99:0x3e7fb16332282dbd!8m2!3d-1.4502267!4d-48.4773593!16s%2Fg%2F1q2w5t725">
                     <UilMapMarker size={32} />
                     <Typography level={6} size="small" fontWeight={100} lineHeight="1.5rem">
-                        Alcindo Cacela
+                        Av. Alcindo Cacela, 1523 - 3º Andar - Pier 4
                     </Typography>
                 </a>
             </S.ContactLinksWrapper>

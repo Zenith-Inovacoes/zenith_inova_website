@@ -34,8 +34,8 @@ export const ContactWrapper = styled.section`
   @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
     flex-direction: row-reverse;
     justify-content: space-between;
-    padding-left: 7.5rem;
-    padding-left: 10rem;
+    padding-left: 4rem;
+    padding-left: 6rem;
     padding-top: 12.5rem;
     padding-bottom: 8.125rem;
   }
@@ -65,7 +65,7 @@ export const ContactLinksWrapper = styled.div`
     @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
       :not(:last-child) {
         margin-bottom: 0;
-        margin-right: 3.25rem;
+        margin-right: 2rem;
       }
     }
   }

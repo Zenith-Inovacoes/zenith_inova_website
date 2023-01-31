@@ -3,43 +3,19 @@ import { MenuProps } from './types';
 import Typography from '../Typography';
 import { UilInstagram } from '@iconscout/react-unicons'
 import { UilWhatsapp } from '@iconscout/react-unicons'
+import { sections } from '@/model/sections'
+import { scrollScreenTo } from '@/services/scroll';
 
-export default function Menu({ open, setOpen }: MenuProps) {
-    function scrollScreenTo(section: any) {
-        window?.scroll({
-            top: section?.offsetTop - 200,
-            behavior: 'smooth',
-        })
-        setOpen(!open)
-    }
-
+export default function Menu({ open, setOpen, activeLink }: MenuProps) {
     return (
-        <S.StyledMenu open={open}>
-            <S.StyledLinkMenu open={open} onClick={() => scrollScreenTo(document.getElementById("main"))}>
-                <Typography level={1} size="xsmall">
-                    Home
-                </Typography>
-            </S.StyledLinkMenu>
-            <S.StyledLinkMenu open={open}>
-                <Typography level={1} size="xsmall">
-                    Parceiros
-                </Typography>
-            </S.StyledLinkMenu>
-            <S.StyledLinkMenu open={open} onClick={() => scrollScreenTo(document.getElementById("about"))}>
-                <Typography level={1} size="xsmall">
-                    Sobre nós
-                </Typography>
-            </S.StyledLinkMenu>
-            <S.StyledLinkMenu open={open} onClick={() => scrollScreenTo(document.getElementById("products"))}>
-                <Typography level={1} size="xsmall">
-                    Produtos
-                </Typography>
-            </S.StyledLinkMenu>
-            <S.StyledLinkMenu open={open} onClick={() => scrollScreenTo(document.getElementById("contacts"))}>
-                <Typography level={1} size="xsmall">
-                    Contato
-                </Typography>
-            </S.StyledLinkMenu>
+        <S.StyledMenu open={open} activeLink={activeLink}>
+            {sections.map(({ section, location }) => (
+                <S.StyledLinkMenu key={section} open={open} onClick={() => scrollScreenTo(document.getElementById(location), setOpen)}>
+                    <Typography level={1} size="xsmall">
+                        {section}
+                    </Typography>
+                </S.StyledLinkMenu>
+            ))}
             <S.StyledIconsMenu>
                 <a href="http://instagram.com/_u/zenith.inova/" rel="noreferrer" target="_blank">
                     <UilInstagram size="32" />

@@ -5,7 +5,8 @@ const theme = {
         primaryColor: "#00001F",
         purpleZenith: "#7327BB",
         darkPrimaryColor: "#030424",
-        textHover: "#a727fa"
+        textHover: "#a727fa",
+        emphasisText: "#d5278c"
     },
     sizes: {
         xsmall: '0.875rem',

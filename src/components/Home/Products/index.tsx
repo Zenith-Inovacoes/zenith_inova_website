@@ -5,8 +5,9 @@ import { ProductCard } from '@/components/ProductCard/ProductCard'
 import { useState } from 'react'
 
 export default function Products() {
-    const [activeIndicator, setActiveIndicator] = useState(1);
-    const [fixedIndicator, setFixedIndicator] = useState(Math.floor(products.length / 2))
+    const [activeIndicator, setActiveIndicator] = useState(Math.ceil(products.length / 2));
+    const [fixedIndicator, setFixedIndicator] = useState(0)
+
     const [startPosition, setStartPosition] = useState(0)
 
     function onIndicatorClick(indicatorIndex: number) {
@@ -34,12 +35,12 @@ export default function Products() {
         <S.ProductsWrapper id='products'>
             <div>
                 <Typography level={1} size="large" fontWeight={700} lineHeight="2.25rem">
-                    Produtos
+                    Inovações
                 </Typography>
             </div>
             <div>
                 <Typography level={6} size="xsmall" fontWeight={100} lineHeight="1.25rem">
-                    Veniam laborum aute aute tempor qui occaecat  enim dolor duis ad. Laboris labore velit magna cupidatat exercitation est  aliquip.
+                    A tecnologia move o mundo e nossos produtos contribuem para isso. Vivencie essas experiências únicas.
                 </Typography>
             </div>
             <S.ProductsContainer onTouchStart={touchStart} onTouchEnd={touchEnd} activeIndicator={activeIndicator} fixedIndicator={fixedIndicator} isQuantityEven={products.length % 2 == 0}>
@@ -56,7 +57,7 @@ export default function Products() {
                             </ProductCard.Title>
                             <ProductCard.Description>
                                 <Typography level={4} fontWeight={300} color="white" size="xsmall">
-                                    {description}adasdasdasdasd asd adasdas dasdasdasdasd asd asdasdas asdsad dasdasdasdadas asdasd asdasd asdasdasdasd
+                                    {description}
                                 </Typography>
                             </ProductCard.Description>
                         </ProductCard.Text>

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 type props = {
   open: boolean;
+  activeLink?: number;
 };
 
 export const StyledMenu = styled.nav<props>`
@@ -19,6 +20,10 @@ export const StyledMenu = styled.nav<props>`
   z-index: 1000;
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-100%)")};
+
+  > button:nth-child(${props => props.activeLink}) *{
+    color: ${({theme}) => theme.colors.textHover}
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     width: 100%;
