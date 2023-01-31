@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 type props = {
   open: boolean;
+  activeLink?: number;
 };
 
 export const StyledMenu = styled.nav<props>`
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,12 +13,17 @@ export const StyledMenu = styled.nav<props>`
   height: 100vh;
   padding: 2rem;
   padding-bottom: 1rem;
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   right: 0;
+  z-index: 1000;
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-100%)")};
+
+  > button:nth-child(${props => props.activeLink}) *{
+    color: ${({theme}) => theme.colors.textHover}
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     width: 100%;
@@ -29,10 +34,11 @@ export const StyledMenu = styled.nav<props>`
   }
 `;
 
-export const StyledLinkMenu = styled.a<props>`
+export const StyledLinkMenu = styled.button<props>`
   text-transform: uppercase;
   padding: 1.5rem 0;
   margin: 0.5rem 0;
+  border: none;
   border-radius: 1rem;
   font-weight: bold;
   letter-spacing: 0.5rem;
