@@ -1,10 +1,11 @@
 import * as S from './styles'
 import Typography from '@/components/Typography'
-import Rectangle from '@/assets/Rectangle23.svg'
+
 import Image from 'next/image'
 import TagBox from '@/components/TagBox'
 import { interestAreas } from '@/model/interestAreas'
 
+import PhoneImage from '@/assets/AboutImage.png'
 import WaveLeft from '@/assets/WaveLeftAbout.svg'
 import WaveRight from '@/assets/WaveRightAbout.svg'
 import LeftLight from '@/assets/LeftLightAbout.png'
@@ -13,7 +14,7 @@ import RightLight from '@/assets/RightLightAbout.png'
 export default function About() {
     return (
         <S.AboutWrapper id='about'>
-            <Image src={Rectangle} alt="Rectangle" />
+            <Image src={PhoneImage} alt="Rectangle" />
             <div>
                 <S.AbouTextsContainer>
                     <Typography level={1} size="xlarge" fontWeight={700} lineHeight="2.25rem">

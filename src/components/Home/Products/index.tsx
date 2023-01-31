@@ -35,7 +35,7 @@ export default function Products() {
         <S.ProductsWrapper id='products'>
             <div>
                 <Typography level={1} size="large" fontWeight={700} lineHeight="2.25rem">
-                    Inovações
+                    Tecnologias
                 </Typography>
             </div>
             <div>
@@ -44,9 +44,9 @@ export default function Products() {
                 </Typography>
             </div>
             <S.ProductsContainer onTouchStart={touchStart} onTouchEnd={touchEnd} activeIndicator={activeIndicator} fixedIndicator={fixedIndicator} isQuantityEven={products.length % 2 == 0}>
-                {products.map(({ name, description, Emoji }) => (
+                {products.map(({ name, description, Emoji, href }) => (
                     <ProductCard.Root key={name}>
-                        <ProductCard.Icon>
+                        <ProductCard.Icon href={href}>
                             {<Emoji />}
                         </ProductCard.Icon>
                         <ProductCard.Text>

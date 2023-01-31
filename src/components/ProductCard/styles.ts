@@ -23,7 +23,7 @@ export const Wrapper = styled.div`
   }
 `
 
-export const IconWrapper = styled.div`
+export const IconWrapper = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,6 +35,7 @@ export const IconWrapper = styled.div`
   height: 80px;
   background: linear-gradient(141.88deg, #260E42 21.36%, #010102 80.2%);
   border-radius: 50px;
+  color: ${({theme}) => theme.colors.white};
 
   @media (min-width: ${({theme}) => theme.breakpoints.xl}) {
     left: 0;

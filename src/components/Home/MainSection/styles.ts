@@ -1,4 +1,32 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components";
+
+const Floating = keyframes`
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+`;
+
+const Increasing = keyframes`
+  0% {
+    transform: scale(1, .2);
+  }
+  
+  50% {
+    transform: scale(1.2, .3);
+  }
+  
+  100% {
+    transform: scale(1, .2);
+  }
+`;
 
 export const Wrapper = styled.div`
   display: flex;
@@ -26,7 +54,7 @@ export const Wrapper = styled.div`
     height: auto;
     z-index: -1;
 
-    @media (min-width: ${({theme}) => theme.breakpoints.sm}) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
       width: auto;
     }
   }
@@ -37,7 +65,7 @@ export const Wrapper = styled.div`
     top: 40%;
     z-index: -1;
 
-    @media (min-width: ${({theme}) => theme.breakpoints.xl}) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
       display: block;
     }
   }
@@ -48,11 +76,11 @@ export const Wrapper = styled.div`
     top: 0;
     z-index: -1;
 
-    @media (min-width: ${({theme}) => theme.breakpoints.lg}) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
       display: block;
     }
   }
-`
+`;
 
 export const TextContainer = styled.div`
   display: flex;
@@ -65,17 +93,15 @@ export const TextContainer = styled.div`
   gap: 16px;
 
   em {
-    color: ${({theme}) => theme.colors.emphasisText}
+    color: ${({ theme }) => theme.colors.emphasisText};
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.xl}) {
     flex-direction: column;
     align-items: center;
     text-align: center;
     width: 100%;
-  }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.lg}) {
     > h1 {
       font-size: 2rem;
       line-height: 2.625rem;
@@ -87,8 +113,7 @@ export const TextContainer = styled.div`
       line-height: 1.875rem;
     }
   }
-  
-`
+`;
 
 export const Container = styled.div`
   display: flex;
@@ -101,24 +126,55 @@ export const Container = styled.div`
   gap: 16px;
   margin-top: 11.625rem;
 
-  > img {
-    width: 500px;
-    height: 500px;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-      margin-top: 2.75rem;
-    }
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.xl}) {
-      width: 300px;
-      height: 300px;
-    }
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.xl}) {
     flex-direction: column;
     align-items: center;
     padding: 0px 16px;
     margin-top: 7.25rem;
-  } 
-`
+  }
+`;
+export const ImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  position: relative;
+
+  > img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+
+    :nth-child(1) {
+      top: 10%;
+      filter: drop-shadow(30px 10px 2rem #7327bb);
+      animation-name: ${Floating};
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+    }
+
+    :nth-child(2) {
+      color: #7327bb;
+      bottom: 10%;
+      transform: scaleY(0.2);
+      opacity: 0.55;
+      animation-name: ${Increasing};
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        bottom: -10px;
+      }
+    }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin-top: 2.75rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    width: 80%;
+    height: 300px;
+  }
+`;

@@ -15,10 +15,10 @@ const ProductCardRoot = function(props: ProductCardRootProps) {
   )
 }
 
-const ProductCardIcon = function(props: ProductCardIconProps){
+const ProductCardIcon = function({children, href}: ProductCardIconProps){
   return(
-    <S.IconWrapper>
-      {props.children}
+    <S.IconWrapper href={href} target="_blank">
+      {children}
     </S.IconWrapper>
   )
 }
