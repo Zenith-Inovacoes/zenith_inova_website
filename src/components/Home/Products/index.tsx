@@ -20,12 +20,12 @@ export default function Products() {
     }
 
     function touchEnd(event: any) {
-        if (startPosition > event.changedTouches[0].clientX && startPosition - event.changedTouches[0].clientX > 200 && activeIndicator < products.length) {
+        if (startPosition > event.changedTouches[0].clientX && startPosition - event.changedTouches[0].clientX > 40 && activeIndicator < products.length) {
             setFixedIndicator(fixedIndicator - 1)
             setActiveIndicator(activeIndicator + 1)
         }
 
-        if (event.changedTouches[0].clientX > startPosition && event.changedTouches[0].clientX - startPosition && activeIndicator > 1) {
+        if (event.changedTouches[0].clientX > startPosition && event.changedTouches[0].clientX - startPosition > 40 && activeIndicator > 1) {
             setFixedIndicator(fixedIndicator + 1)
             setActiveIndicator(activeIndicator - 1)
         }

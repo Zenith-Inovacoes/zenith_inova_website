@@ -21,6 +21,7 @@ export const AboutWrapper = styled.section`
     height: 300px;
     margin: 3rem;
     margin-bottom: 3rem;
+    z-index: -1;
   }
 
   > img:not(:first-child) {
@@ -33,6 +34,7 @@ export const AboutWrapper = styled.section`
     bottom: -5rem;
     width: 80%;
     height: auto;
+    z-index: -1;
 
     @media (min-width: ${({theme}) => theme.breakpoints.sm}) {
       width: auto;
@@ -56,7 +58,8 @@ export const AboutWrapper = styled.section`
   > img:nth-child(5) {
     left: 0;
     width: 80%;
-    height: auto;
+    height: 2000px;
+    /* height: auto; */
 
     @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
       left: -8.5rem;
