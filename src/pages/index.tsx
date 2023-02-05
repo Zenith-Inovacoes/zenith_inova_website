@@ -39,7 +39,11 @@ export default function Home() {
       <Head>
         <title>Zenith Inova</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/x-icon" href="/FavIconZ.png" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <meta name="description"
+          content="Essa é a página web e mobile da startup Zenith Inova, focada em inovações e soluções tecnológicas." />
+        <meta name="author" content="Zenith Inova" />
+        <meta name="keywords" content="Inovação, Design, Falken, Nexus, Omnia, Rai-Watch, Maya, Automação Residencial, Automação Comercial, Automação Industrial, Zenith Inova, Zenith, Inova, Startup, Empresa, Gestão, Negócios, Transformação Digital, Drone, Água, Monitoramento" />
       </Head>
       <Navbar open={open} activeLink={activeLink} scrollPosition={scrollPosition}>
         <Image src={ZenithLetterLogo} alt="Logo só de letra da Zenith" width={128} />
