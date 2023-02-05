@@ -7,7 +7,7 @@ export interface ProductCardRootProps {
 
 export interface ProductCardIconProps {
   children: ReactNode
-  href?: string
+  href: string
 }
 
 export interface ProductCardTextProps {

@@ -6,7 +6,8 @@ export const products = [
     {
         name: "Omnia",
         description: "Linha de dispositivos inteligentes e inovadores em IoT. Administre seus equipamentos e sua rotina através do gerenciamento automatizado. De qualquer lugar do mundo.",
-        Emoji: () => <UilChannel size={28}/>
+        Emoji: () => <UilChannel size={28}/>,
+        href: "/"
     },
     {
         name: "Falken",
@@ -17,6 +18,7 @@ export const products = [
     {
         name: "Andrômeda",
         description: "Serviço para desenvolvimento de sites e landing pages que fornece soluções visuais impactantes para seu negócio.",
-        Emoji: () => <UilArrow size={28} />
+        Emoji: () => <UilArrow size={28} />,
+        href: "/"
     },
 ]

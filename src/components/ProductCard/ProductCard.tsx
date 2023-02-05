@@ -1,46 +1,51 @@
 import * as S from "./styles"
-import { 
+import {
   ProductCardRootProps,
   ProductCardIconProps,
   ProductCardDescriptionProps,
-  ProductCardTitleProps, 
+  ProductCardTitleProps,
   ProductCardTextProps
 } from "./types"
 
-const ProductCardRoot = function(props: ProductCardRootProps) {
-  return(
+const ProductCardRoot = function (props: ProductCardRootProps) {
+  return (
     <S.Wrapper>
       {props.children}
     </S.Wrapper>
   )
 }
 
-const ProductCardIcon = function({children, href}: ProductCardIconProps){
-  return(
-    <S.IconWrapper href={href} target="_blank">
+const ProductCardIcon = function ({ children, href }: ProductCardIconProps) {
+  function checkValidHref(e: any, href: string) {
+    if (href === '/')
+      e.preventDefault()
+  }
+
+  return (
+    <S.IconWrapper href={href} target="_blank" onClick={e => checkValidHref(e, href)}>
       {children}
     </S.IconWrapper>
   )
 }
 
-const ProductCardText = function(props: ProductCardTextProps){
-  return(
+const ProductCardText = function (props: ProductCardTextProps) {
+  return (
     <S.TextWrapper>
       {props.children}
     </S.TextWrapper>
   )
 }
 
-const ProductCardTitle = function(props: ProductCardTitleProps){
-  return(
+const ProductCardTitle = function (props: ProductCardTitleProps) {
+  return (
     <>
       {props.children}
     </>
   )
 }
 
-const ProductCardDescription = function(props: ProductCardDescriptionProps){
-  return(
+const ProductCardDescription = function (props: ProductCardDescriptionProps) {
+  return (
     <>
       {props.children}
     </>
